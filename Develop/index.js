@@ -16,17 +16,17 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'isntallation instructions',
+        name: 'installation',
         message: 'Enter installation instructions'
     },
     {
         type: 'input',
-        name: 'usage guidelines',
+        name: 'usage',
         message: 'Enter the usage guidlines for this project'
     },
     {
         type: 'input',
-        name: 'test instrucitons',
+        name: 'test',
         message: 'Enter instructions for testing'
     },
     {
@@ -62,8 +62,41 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
+
     inquirer.prompt(questions).then((answers) => {
-        console.log (answers)
+        const readMe = `
+        # ${answers.title}
+
+        ## Description 
+        ${answers.description}
+
+        ## Table of Contents
+        - [Installation](#installation)
+        - [Usage](#usage)
+        - [License](#license)
+        - [Contributing](#contributing)
+        - [Tests](#tests)
+        - [Questions](#questions)
+       
+        ## Installation
+        ${answers.installation}
+
+        ## Usage
+        ${answers.usage}
+
+        ## License
+        This project is licensed under the ${answers.license} License.
+
+        ## Contributing
+        ${answers.contribution}
+
+        ## Tests
+        ${answers.tests}
+       
+        ## Questions
+        Please contact me [${answers.username}] at (github.com/${answers.username}) or email me at ${answers.email}
+       `
+       writeToFile('ReadME.md',readMe)
     })
 }
 
