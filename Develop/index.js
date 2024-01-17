@@ -102,7 +102,7 @@ function init() {
         ## Questions
         Please contact me [${answers.username}] at (github.com/${answers.username}) or email me at ${answers.email}
        `
-       writeToFile('ReadME.md',readMe)
+       writeToFile('README.md',readMe)
     })
 }
 
