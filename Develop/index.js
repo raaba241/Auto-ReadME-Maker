@@ -71,37 +71,36 @@ function init() {
     inquirer.prompt(questions).then((answers) => {
         // creating a variable that will store all my text data for the readME
         const readMe = `
-        # ${answers.title}
+# ${answers.title}
 
-        ## Description 
-        ${answers.description}
+## Description 
+${answers.description}
 
-        ## Table of Contents
-        - [Installation](#installation)
-        - [Usage](#usage)
-        - [License](#license)
-        - [Contributing](#contributing)
-        - [Tests](#tests)
-        - [Questions](#questions)
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
        
-        ## Installation
-        ${answers.installation}
+## Installation
+${answers.installation}
 
-        ## Usage
-        ${answers.usage}
+## Usage
+${answers.usage}
 
-        ## License
-        This project is licensed under the ${answers.license} License.
+## License
+This project is licensed under the ${answers.license} License.
 
-        ## Contributing
-        ${answers.contribution}
+## Contributing
+${answers.contribution}
 
-        ## Tests
-        ${answers.tests}
+## Tests
+${answers.tests}
        
-        ## Questions
-        Please contact me [${answers.username}] at (github.com/${answers.username}) or email me at ${answers.email}
-       `
+## Questions
+Please contact me [${answers.username}] at (github.com/${answers.username}) or email me at ${answers.email}`
        writeToFile('README.md',readMe)
     })
 }
