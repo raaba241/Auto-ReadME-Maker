@@ -69,6 +69,7 @@ function writeToFile(fileName, data) {
 function init() {
     // Prompts the questions to users and then executes a function to fill in the gaps
     inquirer.prompt(questions).then((answers) => {
+        // creating a variable that will store all my text data for the readME
         const readMe = `
         # ${answers.title}
 
