@@ -62,7 +62,7 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-
+    // Prompts the questions to users and then executes a function to fill in the gaps
     inquirer.prompt(questions).then((answers) => {
         const readMe = `
         # ${answers.title}
